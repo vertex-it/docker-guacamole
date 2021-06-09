@@ -16,8 +16,5 @@ else
 
   # And add ``listen_addresses`` to ``/etc/postgresql/9.3/main/postgresql.conf``
   echo "listen_addresses='*'" >> /config/postgres/postgresql.conf
-
-  # Restart postgresql service to apply changes
-  /etc/init.d/postgresql restart
 fi
 
