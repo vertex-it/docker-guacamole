@@ -8,13 +8,15 @@ This image will run on most platforms that support Docker including Docker for M
 
 This container runs the guacamole web client, the guacd server and a postgres database.
 
+This is a fork of the oznu/guacamole repository.
+
 ## Usage
 
 ```shell
 docker run \
   -p 8080:8080 \
   -v </path/to/config>:/config \
-  oznu/guacamole
+  vertexit/guacamole
 ```
 
 ## Raspberry Pi / ARMv6
@@ -25,7 +27,7 @@ This image will also allow you to run [Apache Guacamole](https://guacamole.apach
 docker run \
   -p 8080:8080 \
   -v </path/to/config>:/config \
-  oznu/guacamole:armhf
+  vertexit/guacamole:armhf
 ```
 
 ## Parameters
@@ -47,7 +49,7 @@ docker run \
   -p 8080:8080 \
   -v </path/to/config>:/config \
   -e "EXTENSIONS=auth-ldap,auth-duo"
-  oznu/guacamole
+  vertexit/guacamole
 ```
 
 Currently the available extensions are:
@@ -74,7 +76,7 @@ Mapped volumes behave differently when running Docker for Windows and you may en
 version: "2"
 services:
   guacamole:
-    image: oznu/guacamole
+    image: vertexit/guacamole
     container_name: guacamole
     volumes:
       - postgres:/config
@@ -87,7 +89,7 @@ volumes:
 
 ## License
 
-Copyright (C) 2017-2020 oznu
+Copyright (C) 2021 vertexit
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
