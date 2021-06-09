@@ -6,6 +6,12 @@ chown postgres:postgres /var/run/postgresql
 chown -R postgres:postgres /config/postgres
 chmod 0700 /config/postgres
 
+# Adjust PostgreSQL configuration so that remote connections to the database are possible.
+echo "host all  all    0.0.0.0/0  md5" >> /config/postgres/pg_hba.conf
+
+# And add ``listen_addresses`` to ``/etc/postgresql/9.3/main/postgresql.conf``
+echo "listen_addresses='*'" >> /config/postgres/postgresql.conf
+
 if [ -e /config/postgres/postgresql.conf ]; then
   echo "Database already configured"
 else
