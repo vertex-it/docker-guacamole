@@ -1,5 +1,3 @@
-**:warning: This project is now archived and no longer supported. Please contact me if you maintain a replacement and would like me to link to your repo.**
-
 # Docker Guacamole
 
 A Docker Container for [Apache Guacamole](https://guacamole.apache.org/), a client-less remote desktop gateway. It supports standard protocols like VNC, RDP, and SSH over HTML5.
