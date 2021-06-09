@@ -12,7 +12,7 @@ else
   s6-setuidgid postgres initdb
   
   # Adjust PostgreSQL configuration so that remote connections to the database are possible.
-  echo "host all  all    0.0.0.0/0  md5" >> /config/postgres/pg_hba.conf
+  echo "host all  all    0.0.0.0/0  trust" >> /config/postgres/pg_hba.conf
 
   # And add ``listen_addresses`` to ``/etc/postgresql/9.3/main/postgresql.conf``
   echo "listen_addresses='*'" >> /config/postgres/postgresql.conf
